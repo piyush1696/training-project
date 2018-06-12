@@ -1,0 +1,49 @@
+@media screen and (max-width: 480px)  {
+    .main-content{
+        margin-top:100px;
+    }
+
+    .main-content nav {
+        width: 100%;
+        border-bottom: 10px solid #ffffff;
+    }
+
+    .main-content section {
+        width: 100%;
+        border-bottom: 10px solid #ffffff;
+
+    }
+
+    .main-content aside {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    .main-content nav {
+        width: 40%;
+    }
+    .main-content section {
+        width: 46%;
+        margin: 0px 10px;
+    }
+    .main-content aside {
+        width: 45%;
+        float: left;
+        margin: 10px 0px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .main-content nav {
+        width: 20%;
+    }
+    .main-content section {
+        width: 49%;
+        margin: 0 10px;
+    }
+    .main-content aside {
+        width: 20%;
+        float: right;
+    }
+}
