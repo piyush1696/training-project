@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+}
+.test {
+    width: 200px;
+    border: 1px solid #000000;
+}
+
+.test1 {
+    white-space: nowrap;
+}
+
+.test2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.test3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.test2:hover , .test3:hover {
+    overflow: visible;
+}
+
+.test4 {
+    word-wrap: normal;
+}
+
+.test5 {
+    word-wrap: break-word;
+}
+
+.test6 {
+    word-break: keep-all;
+}
+
+.test7 {
+    word-break: break-all;
+}
+
+/*stash*/
