@@ -1,0 +1,192 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  margin: 0;
+}
+
+header {
+    background-color: #1e88e5;
+    overflow: auto;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 100;
+}
+
+header .company-name {
+    color: #ffffff;
+    font-size: 24px;
+    letter-spacing: 1px;
+    float: left;
+    margin-left: 50px;
+    padding: 5px;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header a {
+    border: 2px solid #ffffff;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.right-align {
+    float: right;
+    margin: 10px;
+}
+
+header a:hover {
+    background: #ffffff;
+    color: #1e88e5;
+}
+
+.chat a {
+    background-color: #2962ff;
+    bottom: 10px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    padding: 15px;
+    position: fixed;
+    right: 10px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.chat a:hover {
+    background-color: #ffffff;
+    color: #2962ff;
+    border: 1px solid #2962ff;
+}
+
+.main-content {
+    width: 97%;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom:10px;
+    min-height: 80%;
+    overflow: auto;
+}
+
+.main-content nav {
+    background-color: #e0e0e0;
+    padding: 20px;
+    float: left;
+}
+
+.main-content nav ul{
+    list-style: none;
+}
+
+.main-content nav ul li{
+    line-height: 30px;
+}
+
+.main-content nav ul li a{
+    color: #000;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.main-content nav ul li a:hover{
+    opacity: .8;
+}
+
+.main-content section {
+    background: #e0e0e0;
+    float: left;
+    padding: 20px;
+}
+
+.main-content section .box-section-1 {
+    margin: 10px auto;
+    width: 40%;
+}
+.main-content section .box-section-2 {
+    margin: 10px auto;
+    width: 80%;
+}
+
+.main-content section table{
+    width: 100%;
+    border: 1px solid #000;
+    padding: 0px;
+}
+.main-content section table thead{
+    background-color: #ffffff;
+}
+.main-content section  table thead th{
+    border-bottom: 1px solid #000;
+    padding: 5px;
+}
+.main-content section table tbody td{
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+
+
+.main-content aside {
+    background-color: #e0e0e0;
+}
+
+.main-content aside h1 {
+    border-bottom: 2px solid #000000;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+}
+
+.main-content aside form {
+    margin: 0 auto;
+    padding: 10px;
+    width: 80%;
+}
+
+.main-content aside input {
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #000000;
+    font-size: 14px;
+}
+
+.main-content aside input::placeholder {
+    color:rgba(40,40,40,.6);
+}
+
+.main-content aside input[type="text"]:focus,
+.main-content aside input[type="password"]:focus{
+    border:1px solid #1e88e5;
+}
+
+.main-content aside input[type="submit"]:hover {
+    background-color: #1e88e5;
+    border-color:#1e88e5;
+    color:#ffffff;
+
+}
+
+.footer-content {
+    clear: both;
+}
+
+footer {
+    background-color: #1e88e5;
+    padding: 10px;
+    text-align: center;
+}
+
+footer span{
+    color:#ffffff;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
