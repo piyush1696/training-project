@@ -1,0 +1,57 @@
+.box {
+    background-color: orange;
+    width: 100px;
+    padding: 5px;
+}
+
+.boundry {
+    border:1px solid #000000;
+}
+
+.translate {
+    -ms-transform: translate(10px, 20px); /* IE 9 */
+    -webkit-transform: translate(10px, 20px); /* Safari */
+    transform: translate(10px,20px);
+}
+
+.rotate {
+    -ms-transform: rotate(40deg); /* IE 9 */
+    -webkit-transform: rotate(40deg); /* Safari */
+    transform: rotate(40deg);
+}
+
+.scale1 {
+    -ms-transform: scale(1,1); /* IE 9 */
+    -webkit-transform: scale(1,1); /* Safari */
+    transform: scale(1,1);
+}
+
+.scale2 {
+    -ms-transform: scale(2,3); /* IE 9 */
+    -webkit-transform: scale(2,3); /* Safari */
+    transform: scale(2,3);
+}
+
+.skewx {
+    -ms-transform: skewX(20deg); /* IE 9 */
+    -webkit-transform: skewX(20deg); /* Safari */
+    transform: skewX(20deg);
+}
+
+.skewy {
+    -ms-transform: skewY(-10deg); /* IE 9 */
+    -webkit-transform: skewY(-10deg); /* Safari */
+    transform: skewY(-10deg);
+}
+
+.skew {
+    -ms-transform: skew(10deg,20deg); /* IE 9 */
+    -webkit-transform: skew(10deg,20deg); /* Safari */
+    transform: skew(10deg,20deg);
+}
+
+.matrix {
+    -ms-transform: matrix(1, -0.3, 0, 1, 0, 0); /* IE 9 */
+    -webkit-transform: matrix(1, -0.3, 0, 1, 0, 0); /* Safari */
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
+}

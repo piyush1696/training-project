@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Transform</title>
+        <link href="css/style-2d.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1 style="text-align:center">Transform</h1>
+        <code>transform: translate(10px,20px)</code>
+        <div class="boundry">
+            <div class="box translate"> It is position on 10px in X-direction and 20px in Y direction from its parent </div>
+        </div>
+        <p style="margin-top:50px"><code>transform: translate(40deg)</code></p>
+        <div class="boundry">
+            <div class="box rotate"> It is rotated by 40deg clockwise</div>
+        </div>
+
+        <p style="margin-top:50px"><code>transform: scale(1,1)</code></p>
+        <div class="boundry">
+            <div class="box scale1"> It is scale to 1,1</div>
+        </div>
+
+        <p style="margin-top:50px"><code>transform: scale(2,3)</code></p>
+        <div class="boundry" style="margin-left:250px">
+            <div class="box scale2"> It is scale to 2,3</div>
+        </div>
+
+        <p style="margin-top:50px"><code>transform: skewX(20deg)</code></p>
+        <div class="boundry">
+            <div class="box skewx"> It is skew in X direction by 20deg</div>
+        </div>
+
+        <p style="margin-top:50px"><code>transform: skewY(-10deg)</code></p>
+        <div class="boundry">
+            <div class="box skewy"> It is skew in Y direction by -10deg (Default:Left Up to Right Down)</div>
+        </div>
+
+        <p style="margin-top:50px"><code>transform: skew(10deg,20deg)</code></p>
+        <div class="boundry">
+            <div class="box skew"> It is skew in 10deg from X and 20deg from Y</div>
+        </div>
+
+
+        <p style="margin-top:50px">
+            <code>
+            matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())<br/>
+            matrix(1, -0.3, 0, 1, 0, 0)
+            </code>
+        </p>
+        <div class="boundry">
+            <div class="box matrix"> It is having all properties in one box</div>
+        </div>
+    </body>
+</html>
