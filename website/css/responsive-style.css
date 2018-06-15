@@ -9,7 +9,11 @@
         width: 150px;
         vertical-align: middle;
     }
-
+    .nav-icon {
+        display: block;
+        top: 5%;
+        left: 5%;
+    }
     .section-1 .content {
         padding: 200px 0px;
     }
@@ -93,6 +97,11 @@
     .navigation  .resp-nav-inner .logo-image {
         width: 150px;
         vertical-align: middle;
+    }
+    .nav-icon {
+        display: block;
+        top: 4%;
+        left: 10%;
     }
 
     .section-1 .content {

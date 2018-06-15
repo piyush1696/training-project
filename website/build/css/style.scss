@@ -1,0 +1,91 @@
+$image_path: "../../images/";
+$dark-shade: #000000;
+$white-shade: #ffffff;
+body {
+   margin: 0;
+   padding: 0;
+   font-family: 'Raleway', sans-serif;
+}
+.text-align-center{
+    text-align: center;
+}
+@import 'navigation';
+.section-1 {
+    background-image: url($image_path+"section-1.jpg");
+    background-position: center;
+    background-size: cover;
+    .content {
+        background-color: lighter($dark-shade,40%);
+        .heading {
+            color: $white-shade;
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            }
+        .sub-heading {
+            color: $white-shade;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 300;
+            letter-spacing: 5px;
+        }
+    }
+}
+@import 'section2';
+.section-3 {
+    background-image: url($image_path+"section-3.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+@import 'section4';
+@import 'section5';
+@import 'section6';
+.footer{
+    .social-connect {
+        background-color: #1f1f1f;
+        padding: 40px;
+        .circle {
+            border: 2px solid $white-shade;
+            border-radius: 50%;
+            color: $white-shade;
+            display: inline-block;
+            font-size: 20px;
+            min-width: 30px;
+            min-height: 20px;
+            padding: 10px;
+            margin: 10px;
+            &:hover {
+                color: $dark-shade;
+                background-color: $white-shade;
+            }
+        }
+    }
+    .end {
+        background-color: #171717;
+        color: #dfdfdf;
+        font-size: 14px;
+        padding: 20px 10px;
+        span {
+            font-size: 14px;
+            padding: 10px;
+        }
+        .owner {
+            color:#3d3d3d;
+            font-size: 14px;
+            padding:20px 0 50px 0;
+            a{
+                color:#3d3d3d;
+                text-decoration: none;
+                border-bottom: 1px solid #3d3d3d;
+                &:hover{
+                    color:#808080;
+                    border-bottom: 1px solid #808080;
+                }
+            }
+        }
+    }
+}
+
+@import 'responsive';
