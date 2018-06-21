@@ -3,6 +3,13 @@
     </head>
     <body>
         <script>
+
+            //Self Invoking
+            var fourth = new function() {
+                console.log("Hello Fourth");
+            };
+        
+
             //Variable expression function
             var first = function() {
             console.log("Variable expression Function")
@@ -13,6 +20,7 @@
             };
             //Constructor Function
             var third = new Function("console.log('Constructor function')");
+
 
             first();
             second();
@@ -63,7 +71,21 @@
             function second() {
                 console.log(ab);
             }
+            //Output:
+            // var addSix = createBase(6);
+            // addSix(10); // returns 16
+            // addSix(21); // returns 27
 
+            function createBase(num) {
+                function inner(num1) {
+                    return num + num1;
+                };
+                return inner;
+            };
+
+            var addSix =createBase(6);
+            console.log(addSix(10));
+            console.log(addSix(21));
 
         </script>
     </body>

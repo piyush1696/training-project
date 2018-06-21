@@ -1,0 +1,105 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            //Checking call-by-value and call-by-reffrence
+            var num = 10,
+            name = "Hey",
+            obj1 = {
+              value: "first value"
+            },
+            obj2 = {
+             value: "second value"
+            },
+            obj3 = obj2;
+
+            function change(num, name, obj1, obj2) {
+                num = num * 10;
+                name = "Paul Irish";
+                obj2 = obj1;
+                console.log(obj2.value);  //first value
+                obj2.value = "new value";
+                console.log(obj2.value);  //new value
+                console.log(obj1.value);  //new value
+            }
+
+            change(num, name, obj1, obj2);
+
+            console.log(num);  //10
+            console.log(name); //Hey
+            console.log('obj1 '+ obj1.value);  //new value
+            console.log('obj2 '+obj2.value);  //second value
+            console.log('obj3  '+obj3.value);
+
+            var abc;
+            console.log(abc);
+            abc=1;
+            console.log(abc);
+
+            console.log("Problem ----> ");
+            var i;
+            console.log("Before");
+            for(i = 1; i < 5; i++) {
+                console.log("R: " + i);
+                setTimeout(function() { console.log("S: " + i); }, 1000 * i);
+            }
+            console.log("After")
+            console.log("Resolve ----> ");
+
+            function doSetTimeout(i) {
+                setTimeout(function() { console.log("P :" + i); }, 1000 * i);
+            }
+
+            console.log("Before");
+            for (var i = 1; i < 5; i++) {
+                console.log("A: " + i);
+                doSetTimeout(i);
+            }
+
+            console.log("After");
+
+
+            function main() {
+                var i = 0;
+                return (
+                    function con() {
+                        for(i=0; i<5; i++)
+                            console.log(i);
+                    }
+                );
+
+            };
+            var display = main();
+            display();
+
+
+
+            var str = "pqrs";
+            var str1 = new String("abcd");
+
+            console.log(str);
+            console.log(str1);
+
+            console.log(str.toUpperCase());
+            console.log(str1.toUpperCase());
+
+            console.log(typeof str);
+            console.log(typeof str1);
+
+            console.log(Object.getPrototypeOf(str));
+            console.log(Object.getPrototypeOf(str1));
+
+
+            function Animal(name, color){
+                this.name = name;
+                this.color = color;
+            }
+            var dog = new Animal("dog","white");
+            console.log(dog);
+            Animal.prototype.legs = 4;
+            console.log(dog);
+
+        </script>
+    </body>
+</html>

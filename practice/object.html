@@ -4,18 +4,80 @@
     <body>
         <p id="demo"></p>
         <script>
+
+            //Literals
             var person = {
                 firstName : "Piyush" ,
                 lastName : "Chandak" ,
                 dob : "16/10/1996" ,
-                post : "Trainne",
+                post : undefined,
                 fullName : function() {
                             return this.firstName + " " + this.lastName;
-                                }
+                         }
             };
 
-            document.getElementById("demo").innerHTML =
-             person.fullName() + " is having dob " + person.dob + " is having post of " +person.post ;
+            console.log("Const: " + person.constructor);
+            console.log(person.fullName() + " is having dob " + person.dob +" is having post of " +person.post );
+            console.log(person);
+
+
+            //Using Constructor
+            var fruit = new Object();
+            fruit['name'] = "Mango";
+            fruit['desc'] = function() {
+                return this.name;
+            };
+            console.log("Const: " + fruit.constructor);
+            console.log(fruit.desc());
+            person['language'] = "English";
+            console.log(person);
+            fruit.price = 25;
+            console.log(fruit);
+            delete fruit.price;
+            console.log(fruit);
+            //delete fruit.__proto__.constructor;
+            console.log(fruit);
+
+            //Using function as class
+            function Person(first, age) {
+                this.firstName = first;
+                this.age = age;
+            }
+
+            Person.prototype.car = 0;
+            var p1 = new Person("abc", 25);
+            var p2 = new Person("def", 45);
+            p1.__proto__.car = 734;
+            console.log(p1);
+
+            console.log(p2);
+
+            console.log(p1);
+
+            p1.gender = "male";
+            console.log(p1);
+            console.log(p2);
+
+            console.log(Person);
+            console.log("Const: "+Person.constructor);
+            console.log(Person);
+            console.log(p1.car);
+
+            console.log("-----------");
+            console.log(typeof person);
+            console.log(typeof fruit);
+            console.log(typeof Person);
+            console.log(typeof p1);
+
+            console.log("-----------");
+            console.log(person);
+            console.log(fruit);
+            console.log(Person);
+            console.log(p1);
+
+            console.log(Object.getPrototypeOf(p1));
+
+
 
         </script>
     </body>
