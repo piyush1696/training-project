@@ -1,0 +1,70 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            //Variable expression function
+            var first = function() {
+            console.log("Variable expression Function")
+            };
+            //Normal Function
+            function second() {
+                console.log("Normal Function");
+            };
+            //Constructor Function
+            var third = new Function("console.log('Constructor function')");
+
+            first();
+            second();
+            third();
+            // Self Calling Function
+            (function() {
+                console.log("Self Calling");
+            })();
+
+            //variable changing value in local but not affecting global value
+            var temp=7;
+            function four() {
+                arguments[2] = 3;
+                console.log(arguments.length);
+                console.log(arguments[2]);
+            };
+
+            four(5,3, temp, "hello");
+            console.log( temp );  //checking value of global
+
+            var x = myFunction();            // x will be the window object
+
+            function myFunction() {
+               return this;
+           }
+            console.log(myFunction());
+
+
+            //Checking Sequencing of flow of function
+            function add(a, b) {
+                console.log(a * b);
+            }
+
+            function add(a) {
+                console.log(a);
+            }
+
+            add(2,3);
+            add(2);
+
+            var ab;
+            function first() {
+                ab = 1;
+                console.log(ab)
+                second();
+            }
+
+            function second() {
+                console.log(ab);
+            }
+
+
+        </script>
+    </body>
+</html>

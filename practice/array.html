@@ -1,0 +1,51 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            //Array declared
+            var arr = [2,1,6,3];
+            console.log(arr);
+            //Fnding Max in array using Math
+            console.log(Math.max.apply(null,arr));
+            //Sorting
+            arr.sort();
+            console.log(arr);
+            //Reversing
+            arr.reverse();
+            console.log(arr);
+            //Display even number then display odd number
+            var p=[],q=[];
+            for (var i = 0; i < arr.length; i++){
+                if(arr[i] % 2 == 0) {
+                    p.push(arr[i]);
+
+                }
+                else {
+                    q.push(arr[i]);
+                }
+                console.log(arr[i]);
+            }
+
+            console.log(p.concat(q));
+
+            //Sorting number using function
+            var points = [40, 100, 1, 5, 25, 10];
+            points.sort(function(a, b){return a - b});
+            console.log(points);
+
+            //Sorting String
+            ar=['a','ab','ba','aa','bb'];
+            console.log(ar);
+            ar.sort();
+            console.log(ar);
+
+            //Sorting Object in array
+            var cars = [
+                {type:"Volvo", year:2016},
+                {type:"Saab", year:2001},
+                {type:"BMW", year:2010}];
+            console.log(cars.sort(function(a,b){ return a.year - b.year}));
+        </script>
+    </body>
+</html>

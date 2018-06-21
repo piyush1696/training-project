@@ -1,0 +1,22 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            var person = {
+                firstName : "Piyush" ,
+                lastName : "Chandak" ,
+                dob : "16/10/1996" ,
+                post : "Trainne",
+                fullName : function() {
+                            return this.firstName + " " + this.lastName;
+                                }
+            };
+
+            document.getElementById("demo").innerHTML =
+             person.fullName() + " is having dob " + person.dob + " is having post of " +person.post ;
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            document.write( 1 - 0 + "asd");  //1asd
+            document.write("<br/>");
+
+            document.write("" + 1 - 5); //-4
+            document.write("<br/>");
+
+            document.write( true-15); //-14
+            document.write("<br/>");
+
+            document.write( 3 - "5"); //-2
+            document.write("<br/>");
+
+            document.write(2 + 3); //5
+            document.write("<br/>");
+
+            document.write(4 - 5 + "px"); //-1px
+            document.write("<br/>");
+
+            document.write("$" + 4 + 5);  //$45
+            document.write("<br/>");
+
+            document.write("4" - 2); //2
+            document.write("<br/>");
+
+            document.write("4px" * "2px");  //NAN
+            document.write("<br/>");
+
+            document.write(7 / 0);  //Infinity
+            document.write("<br/>");
+
+            document.write("  -9     \n" + 5);  //-9 5
+            document.write("<br/>");
+
+            document.write("  -9\n" - 5);  //-14
+            document.write("<br/>");
+
+            document.write(null + 10);  //10
+            document.write("<br/>");
+
+            document.write(true +  false);  //1
+            document.write("<br/>");
+
+            document.write("1"+2+2 + "2" + 1);//12221
+            document.write("<br/>");
+
+            a=1;
+            b=1;
+            c=++a; //c=2  a=2
+            d=b++;  //d=1 b=2( after next line)
+            document.write(a+" "+b+" "+c+" "+d);  // 2 2 2 1
+
+            // Unary operator
+            e = 10;
+            document.write(e--);  //10
+
+            document.write(--e); //8
+
+
+        </script>
+    </body>
+</html>

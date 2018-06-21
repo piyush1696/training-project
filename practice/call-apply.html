@@ -1,0 +1,57 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var person = {
+                fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            }
+            //console.log(firstName);
+             var person1 = {
+                  firstName: "John",
+                  lastName: "Doe"
+             }
+        //     console.log(person1.age);
+            // var person2 = {
+            //     firstName: "jsdhf",
+            //     lastName: "sadm"
+            // }
+            //Here "this" will be pointing to owner where it cant find firstname so undefined will be result
+            console.log(person.fullName(person1));
+            //Sending object person1 to fullname so there "this" will be pointing to person1 object
+            // console.log(person.fullName.call(person1));
+
+
+            var update = function(name, age, size){
+                this.name = name;
+                this.age = age;
+            };
+
+            //calling this will update person1 object
+            update.call(person1, 'Ram', 20);
+            console.log(person1);
+            console.log(person2);
+
+
+            //Closure
+            function closure() {
+                var number = 1;
+                function inside()  {
+                    number = number + 1;
+                    return number;
+                };
+                return inside;
+            };
+
+            var call = closure();
+            console.log(call());  //2
+            console.log(call()); // 3
+
+            //console.log(number);
+            //Number not defined
+
+        </script>
+    </body>
+</html>
