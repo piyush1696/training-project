@@ -163,7 +163,7 @@ function showBirthday(event, date) {
     var birthDate = new Date(currentYear, currentMonth, date);
     for (var i = 0; i < birthdDates.length; i++){
         if (birthdDates[i].date.getMonth() == birthDate.getMonth() && birthdDates[i].date.getDate() == birthDate.getDate()) {
-            personNames += birthdDates[x].name + "\n";
+            personNames += birthdDates[i].name + "\n";
         }
     }
     alert(personNames);
