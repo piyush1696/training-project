@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="sass/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title">Calendar</h1>
+            <div class="row row-1">
+                <button onclick="previousYear()" class="btn previous"> < </button>
+                <span id="year">
+                    Year
+                </span>
+                <button onclick="nextYear()" class="btn next"> > </button>
+            </div>
+            <div class="row row-2">
+                <button onclick="previousMonth()" class="btn previous"> < </button>
+                <span id="month">Month</span>
+                <button onclick="nextMonth()" class="btn next"> > </button>
+            </div>
+            <div class="row">
+                <table cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Sunday</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thrusday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody id="display-dates" >
+                    </tbody>
+                    <!-- <td>
+                        <div class="date">
+                            12
+                        </div>
+                        <div class="events">
+                            <div class="circle red"></div>
+                            <div class="circle yellow"></div>
+                            <div class="circle green"></div>
+                        </div>
+
+                        <div class="event-container">
+                            abcd
+                        </div>
+
+                    </td> -->
+                </table>
+            </div>
+            <p>Selected Dates are </p>
+            <ul id="date-range">
+            </ul>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
