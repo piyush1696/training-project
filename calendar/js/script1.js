@@ -38,8 +38,38 @@ var birthdDates = [
      new Birthday ("Shashank Saxena", new Date(1990,11,11)),
      new Birthday ("Nitesh Thakhur", new Date(1990,11,12)),
      new Birthday ("Satya Naryan Patidar", new Date(1983,11,12)),
-
  ];
+
+var birth = {
+    "January" : [{"name" : "Shubham Katariya" , "date" : "3-1-1995"},
+                 {"name" : "Vipin Joshi" , "date" : "15-1-1946"},
+                 {"name" : "Shikha Shakarwar" , "date" : "15-1-1994"},
+                 {"name" : "Darshana" , "date" : "15-1-1997"} ],
+    "Febraury" : [],
+    "March" : [],
+    "April" : [{"name" : "Gurpreet Chhabra", "date" : "2-4-1995"},
+               {"name" : "Sonam Ravi Gupta", "date" : "22-4-1987"} ],
+    "May" : [{"name" : "Siyaram Patidar", "date" : "3-5-1985"},
+             {"name" : "Shubham Choubey", "date" : "9-5-1993"},
+             {"name" : "Mayur Vaidya", "date" : "9-5-1994"},
+             {"name" : "Amit Nagar", "date" : "10-5-1986"},
+             {"name" : "Deepak Patidar", "date" : "10-5-1990"},
+             {"name" : "Rahul Kulmi", "date" : "28-5-1988"} ],
+    "June" : [{"name" : "Vishal Patidar", "date" : "20-6-1994"} ],
+    "July" : [ {"name" : "Awanish Tiwari", "date" : "6-7-1974"},
+               {"name" : "Surendra Patidar", "date" : "21-7-1988"},
+               {"name" : "Anjana Singh", "date" : "24-7-1992"} ],
+    "August" : [{"name" : "Aditiya Paliwal", "date" : "8-7-1994"} ],
+    "September" : [{"name" : "Varsha Tyagi", "date" : "13-9-1992"} ,
+                   {"name" : "Rashmi Soni", "date" : "19-9-1993"},
+                   {"name" : "Rupak", "date" : "22-9-1995"} ],
+    "October" : [{"name" : "Priyanshi Asawara", "date" : "19-10-1993"} ,
+                 {"name" : "Piyush ", "date" : "16-10-1996"} ],
+    "November" : [],
+    "December" : [{"name" : "Shashank Saxena", "date" : "11-12-1990"} ,
+                  {"name" : "Nitesh Thakhur", "date" : "12-12-1990"} ,
+                  {"name" : "Satya Naryan Patidar", "date" : "12-12-1983"} ]
+};
 
 //By default Method
 setCalendar();
@@ -108,10 +138,11 @@ function selectDateRange(date) {
         }
         if (startDate.getMonth() == endDate.getMonth()) {
             for (i = startDate.getDate(); i <= endDate.getDate(); i++) {
-                tempDate = new Date(startDate.getFullYear(),startDate.getMonth(),i);
-                dateRangeList += "<li>" + tempDate.getDate() + " " + monthName[tempDate.getMonth()] + " " + tempDate.getFullYear() + " - " + dayName[tempDate.getDay()] + "</li>";
+            //    tempDate = new Date(startDate.getFullYear(),startDate.getMonth(),i);
+            //    dateRangeList += "<li>" + tempDate.getDate() + " " + monthName[tempDate.getMonth()] + " " + tempDate.getFullYear() + " - " + dayName[tempDate.getDay()] + "</li>";
                 setColor(new Date(currentYear, currentMonth, i));
             }
+            dateRangeList = startDate.getDate() + " " + monthName[startDate.getMonth()] + " - " + endDate.getDate() + " " + monthName[startDate.getMonth()];
         }
     } else {
         startDate = null;
@@ -119,6 +150,7 @@ function selectDateRange(date) {
         setCalendar();
         setBirthday();
         selectDateRange(date);
+        dateRangeList = "";
     }
 
     document.getElementById("date-range").innerHTML = dateRangeList;
@@ -135,25 +167,23 @@ function setColor(selectedDate) {
     }
 }
 
-function getWeekCount(firstDate) {
+function getWeekCount(selectedDate) {
     var totalDays = 0;
-    for (i = 0; i < firstDate.getMonth(); i++) {
-        var firstDate = new Date(firstDate.getFullYear(), i, 1);
-        var lastDate = new Date(firstDate.getFullYear(), i+1, 0);
-        totalDays += (lastDate.getDate()-firstDate.getDate()) + 1;
+    for (i = 0; i < selectedDate.getMonth(); i++) {
+        var lastDate = new Date(selectedDate.getFullYear(), i+1, 0);
+        totalDays += lastDate.getDate();
     }
-    totalDays += firstDate.getDate()
+    totalDays += selectedDate.getDate()
     totalDays = Math.floor(totalDays / 7) + 1 ;
     return  totalDays;
 }
 
 function setBirthday() {
-    for (var i = 0; i < birthdDates.length; i++) {
-        if (birthdDates[i].date.getMonth() == currentMonth) {
-             var tempIdName = birthdDates[i].date.getDate() + "-" + currentMonth + "-" + currentYear;
-             var element = document.getElementById("date-" + tempIdName);
-             element.innerHTML += "<div class='circle color' onclick='showBirthday(event," + birthdDates[i].date.getDate() + ")'> </div>" ;  //
-         }
+    for(var i = 0; i < birth[monthName[currentMonth]].length; i++) {
+        var str = birth[monthName[currentMonth]][i].date;
+        var tempIdName = str.substring(0,str.indexOf('-')) + "-" + currentMonth + "-" + currentYear;
+        var element = document.getElementById("date-" + tempIdName);
+        element.innerHTML += "<div class='circle color' onclick='showBirthday(event," + str.substring(0,str.indexOf('-')) + ")'> </div>" ;  //
     }
 }
 
@@ -161,9 +191,10 @@ function showBirthday(event, date) {
     event.stopPropagation();
     var personNames = "";
     var birthDate = new Date(currentYear, currentMonth, date);
-    for (var i = 0; i < birthdDates.length; i++){
-        if (birthdDates[i].date.getMonth() == birthDate.getMonth() && birthdDates[i].date.getDate() == birthDate.getDate()) {
-            personNames += birthdDates[i].name + "\n";
+    for(var i = 0; i < birth[monthName[currentMonth]].length; i++) {
+        var str = birth[monthName[currentMonth]][i].date;
+        if (str.substring(0,str.indexOf('-')) == birthDate.getDate()) {
+            personNames += birth[monthName[currentMonth]][i].name + "\n";
         }
     }
     alert(personNames);
