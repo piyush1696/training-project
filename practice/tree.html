@@ -1,0 +1,24 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            function Tree(branch, leaf) {
+                this.branch = branch;
+                this.leaf = leaf;
+            };
+
+            function Herbs(name, color, branch, leaf) {
+                this.name = name;
+                this.color = color;
+                Tree.apply(this, [branch, leaf]);
+                this.desc = function() {
+                    return this.name + " is of " + this.color + " color and it have " + this.branch + " branches and " + this.leaf + " leaves";
+                };
+            };
+            var rose = new Herbs("Rose", "red", 10, 100);
+            console.log(rose.desc());
+
+        </script>
+    </body>
+</html>

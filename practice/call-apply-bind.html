@@ -1,0 +1,79 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            var person = {
+                fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            }
+            var person1 = {
+                  firstName: "John",
+                  lastName: "Doe"
+             }
+            var person2 = {
+                firstName: "jsdhf",
+                lastName: "sadm"
+            }
+            // Here "this" will be pointing to owner where it cant find firstname so undefined will be result
+            console.log(person.fullName(person1));
+            // Sending object person1 to fullname so there "this" will be pointing to person1 object
+             console.log(person.fullName.call(person1));
+
+
+            var update = function(name, age, size){
+                this.name = name;
+                this.age = age;
+            };
+
+            //calling this will update person1 object
+            update.call(person1, 'Ram', 20);
+            console.log(person1);
+            console.log(person2);
+
+
+            //Closure
+            function closure() {
+                var number = 1;
+                function inside()  {
+                    number = number + 1;
+                    return number;
+                };
+                return inside;
+            };
+
+            var call = closure();
+            console.log(call());  //2
+            console.log(call()); // 3
+
+            //console.log(number);
+            //Number not defined
+
+            var fruit = {
+                description : function() {
+                    return this.name + " comes in " + this.seasson + " seasson";
+                }
+            }
+            var mango = {
+                name : "Mango",
+                seasson: "Summer"
+            }
+            var apple = {
+                name : "Apple",
+                seasson : "Winter"
+            }
+            var banana = {
+                name : "Banana",
+                seasson : "All"
+            }
+
+            console.log(fruit.description());
+            console.log(fruit.description.call(mango));  //Instantly call
+            console.log(fruit.description.apply(apple));  //Instantly Called
+            var bind = fruit.description.bind(banana);  //Defination is assign but not called
+            console.log(bind());  //Bind Function is called
+
+        </script>
+    </body>
+</html>

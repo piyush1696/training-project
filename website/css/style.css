@@ -1,0 +1,104 @@
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+
+.section-1 {
+    background-image: url("../images/section-1.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.section-1 .content {
+    background-color: rgba(0,0,0,.4);
+
+}
+
+.section-1 .content .heading {
+    color: #ffffff;
+    font-size: 72px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-1 .content .sub-heading {
+    color: #ffffff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+
+.section-2 {
+    overflow: auto;
+    font-size: 16px;
+    margin: 0px 25px;
+}
+
+
+.section-2 .left-content {
+    float: left;
+    margin-top: 20px;
+}
+
+.section-2 .left-content h1 {
+    line-height: 40px;
+    font-size: 32px;
+    font-weight: 999;
+
+}
+
+.section-2 .left-content .left-meta-content {
+    color:rgba(0,0,0,.5);
+    margin-top: 50px;
+}
+
+.section-2 .left-content .left-meta-content p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-top: 30px;
+    word-wrap: break-word;
+}
+
+.section-2 .right-content {
+    width: 30%;
+    float: left;
+    color:rgba(0,0,0,.5);
+}
+
+.section-2 .right-content .data .box {
+    padding: 20px 50px;
+}
+
+.section-2 .right-content .data .box .box-head {
+    color: #808080;
+    padding: 20px 0px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.section-2 .right-content .data .box .box-content {
+    line-height: 20px;
+}
+
+.section-2 .right-content .data .box .box-content strong{
+    font-weight: bold;
+    color: #808080;
+}
+.section-2 .left-content .left-meta-content p {
+    width: 95%;
+    letter-spacing: 1px;
+}
+
+.section-3 {
+    background-image: url("../images/section-3.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100%;;
+}

@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <pre>
+            var str = "Piyush";
+            var str1 = "Piyush";
+            str == str1 : <span id="val1"></span>
+            str === str1 : <span id="val2"></span>
+            <span id="type"></span>
+        </pre>
+
+        <pre>
+            var str2 = new String("Piyush");
+            var str3 = "Piyush";
+            str2 == str3 : <span id="val3"></span>
+            str2 === str3 : <span id="val4"></span>
+            <span id="type1"></span>
+        </pre>
+
+        <button onclick="clickMe()">Click me</button>
+        <p id="ele1"></p>
+        <button onmouseover="mouseover()">Mouse Over</button>
+        <p id="ele2"> </p>
+        <button onmouseout="mouseout()">Mouse Out</button>
+        <p id="ele3"></p>
+
+        <script>
+            table(7);
+            console.log("20 less then 10 "+ lessThan(20,10) );
+            console.log("10 more then 500 "+ moreThan(20,10) );
+            console.log("10 equal to 10"+ equalTo(10,10) );
+            evenOrodd(15);
+            evenOrodd(6);
+            //switch
+            week(5);
+
+            var str = "Piyush";
+            var str1 = "Piyush";
+            var str2 = new String("Piyush");
+            var str3 = "Piyush";
+            str3 = 56;
+            document.getElementById("val1").innerHTML = str == str1;
+            document.getElementById("val2").innerHTML = str === str1;
+            document.getElementById("val3").innerHTML = str2 == str3;
+            document.getElementById("val4").innerHTML = str2 === str3;
+            document.getElementById("type").innerHTML = "str : " + typeof (str) + " and str1 : " + typeof (str1);
+            document.getElementById("type1").innerHTML = "str2 : " + typeof (str2) + " and str3 : " + typeof (str3);
+
+            var str = "abcdefghijklm";
+            var res = "Length : " + str.length + "<br/> slice of (3, 10) : " + str.slice(3,10) + " substring of (3,10) : " +str.substring(3,10) ;
+            res = res + "<br/> slice(-5,-3) : " + str.slice(-5,-3) +" substring (-5,-3) : " +str.substring(-5,-3);
+            res = res + "<br/> slice(5,-3) : " + str.slice(5,-3) +" substring (5,-3) : " +str.substring(5,-3);
+            res = res + "<br/> substr(2,5): " + str.substr(2,5);
+
+            document.getElementById("test").innerHTML = res;
+
+            var str4 = "Hello";
+            var str5 = "World!";
+
+            res = "<br/> str4 : " + str4;
+            res = res + "<br/> str5 : "  + str5;
+            res = res + "<br/> Concat: " + str4.concat(str5);
+            res = res + "<br/> Uppercase: " + str4.toUpperCase();
+            res = res + "<br/> Lowercase: " + str4.toLowerCase();
+
+            document.getElementById("string-opt").innerHTML = res;
+
+
+            function clickMe() {
+                document.getElementById("ele1").innerHTML = "Mouse Clicked";
+            }
+
+            function mouseover() {
+                document.getElementById("ele2").innerHTML = "Mouse Over";
+            }
+
+            function mouseout() {
+                document.getElementById("ele3").innerHTML = "Mouse Out";
+            }
+
+            console.log("p: " + p);
+            console.log("q: " + q);
+        </script>
+
+
+
+
+
+
+
+    </body>
+</html>

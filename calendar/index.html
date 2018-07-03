@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calendar</title>
+        <link href="sass/stylesheet.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title">Calendar</h1>
+            <div class="row row-1">
+                <button onclick="previousYear()" class="btn previous"> < </button>
+                <span id="year">
+                    Year
+                </span>
+                <button onclick="nextYear()" class="btn next"> > </button>
+            </div>
+            <div class="row row-2">
+                <button onclick="previousMonth()" class="btn previous"> < </button>
+                <span id="month">Month</span>
+                <button onclick="nextMonth()" class="btn next"> > </button>
+            </div>
+            <div class="row row-3">
+                <div class="heading">Week</div>
+                <div class="heading">Sunday</div>
+                <div class="heading">Monday</div>
+                <div class="heading">Tuesday</div>
+                <div class="heading">Wednesday</div>
+                <div class="heading">Thrusday</div>
+                <div class="heading">Friday</div>
+                <div class="heading">Saturday</div>
+            </div>
+            <div class ="row row-4">
+                <div id="display-dates">
+                    <div class="date-container ">
+                        <!-- <div class="date">
+                            <div class="circle red"></div>
+                            16
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <p>Selected Dates are </p>
+            <ul id="date-range"></ul>
+        </div>
+         <script src="js/script.js"></script>
+
+    </body>
+</html>
