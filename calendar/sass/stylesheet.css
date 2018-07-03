@@ -11,19 +11,6 @@ body {
   .container .row {
     color: #FFFFFF;
     overflow: auto; }
-    .container .row .list {
-      border: none;
-      background-color: inherit;
-      color: #FFFFFF;
-      padding: 20px;
-      font-size: 18px;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      -ms-appearance: none;
-      -o-appearance: none;
-      appearance: none; }
-      .container .row .list .list-item {
-        background-color: grey; }
   .container .row-1 {
     background-color: #0277BD;
     font-size: 20px;
@@ -57,7 +44,7 @@ body {
       float: left;
       padding: 20px 0px;
       text-align: center;
-      width: 12.5%; }
+      width: 128px; }
   .container .row-4 {
     color: #000000; }
     .container .row-4 #display-dates .date-container {
@@ -65,7 +52,7 @@ body {
       display: inline-block;
       margin: 1px 0;
       position: relative;
-      width: 12.5%; }
+      width: 128px; }
       .container .row-4 #display-dates .date-container .color {
         background-color: #1A237E; }
       .container .row-4 #display-dates .date-container .week {
@@ -101,4 +88,4 @@ body {
       color: #FFFFFF;
       font-weight: 200; }
 
-/*# sourceMappingURL=styyle1.css.map */
+/*# sourceMappingURL=stylesheet.css.map */

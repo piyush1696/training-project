@@ -14,33 +14,7 @@ function Birthday(name, date) {
     this.date = date;
 }
 
-var birthdDates = [
-     new Birthday ("Shubham Katariya", new Date(1995,0,3)),
-     new Birthday ("Vipin Joshi", new Date(1946,0,15)),
-     new Birthday ("Shikha Shakarwar", new Date(1994,0,15)),
-     new Birthday ("Darshan", new Date(1997,0,15)),
-     new Birthday ("Gurpreet Chhabra", new Date(1995,3,2)),
-     new Birthday ("Sonam Ravi Gupta", new Date(1987,3,22)),
-     new Birthday ("Siyaram Patidar", new Date(1985,4,3)),
-     new Birthday ("Shubham Choubey", new Date(1993,4,8)),
-     new Birthday ("Mayur Vaidya", new Date(1994,4,9)),
-     new Birthday ("Amit Nagar", new Date(1986,4,10)),
-     new Birthday ("Deepak Patidar", new Date(1990,4,10)),
-     new Birthday ("Rahul Kulmi", new Date(1988,4,28)),
-     new Birthday ("Vishal Patidar", new Date(1994,5,20)),
-     new Birthday ("Awanish Tiwari", new Date(1974,6,6)),
-     new Birthday ("Surendra Patidar", new Date(1988,6,21)),
-     new Birthday ("Anjana Singh", new Date(1992,6,24)),
-     new Birthday ("Aditiya Paliwal", new Date(1994,7,8)),
-     new Birthday ("Varsha Tyagi", new Date(1992,9,13)),
-     new Birthday ("Rashmi Soni", new Date(1993,9,19)),
-     new Birthday ("Priyanshi Asawara", new Date(1993,10,19)),
-     new Birthday ("Shashank Saxena", new Date(1990,11,11)),
-     new Birthday ("Nitesh Thakhur", new Date(1990,11,12)),
-     new Birthday ("Satya Naryan Patidar", new Date(1983,11,12)),
- ];
-
-var birth = {
+var birthdates = {
     "January" : [{"name" : "Shubham Katariya" , "date" : "3-1-1995"},
                  {"name" : "Vipin Joshi" , "date" : "15-1-1946"},
                  {"name" : "Shikha Shakarwar" , "date" : "15-1-1994"},
@@ -90,10 +64,8 @@ function setCalendar() {
     for (var i = 0; i < totalBlock; i++) {
             if(i % 7 == 0) {
                 tempBlockElement += "<div class='date-container '> " +
-                                    "<div class='week'> " +
-                                        weekNumber++ +
-                                    "</div>" +
-                                "</div>";
+                                    "<div class='week'> " + weekNumber++ + "</div>" +
+                                    "</div>";
             }
             presentMonthStartDay = (presentMonthFirstDate.getDay() != 0) ?  presentMonthFirstDate.getDay() : 0;  // check whether month start from sunday
             if(i <= previousMonthLastDate.getDay() && presentMonthFirstDate.getDay() != 0) {   // Display previous month dates
@@ -173,14 +145,14 @@ function getWeekCount(selectedDate) {
         var lastDate = new Date(selectedDate.getFullYear(), i+1, 0);
         totalDays += lastDate.getDate();
     }
-    totalDays += selectedDate.getDate()
+    totalDays += selectedDate.getDate();
     totalDays = Math.floor(totalDays / 7) + 1 ;
     return  totalDays;
 }
 
 function setBirthday() {
-    for(var i = 0; i < birth[monthName[currentMonth]].length; i++) {
-        var str = birth[monthName[currentMonth]][i].date;
+    for(var i = 0; i < birthdates[monthName[currentMonth]].length; i++) {
+        var str = birthdates[monthName[currentMonth]][i].date;
         var tempIdName = str.substring(0,str.indexOf('-')) + "-" + currentMonth + "-" + currentYear;
         var element = document.getElementById("date-" + tempIdName);
         element.innerHTML += "<div class='circle color' onclick='showBirthday(event," + str.substring(0,str.indexOf('-')) + ")'> </div>" ;  //
@@ -191,10 +163,10 @@ function showBirthday(event, date) {
     event.stopPropagation();
     var personNames = "";
     var birthDate = new Date(currentYear, currentMonth, date);
-    for(var i = 0; i < birth[monthName[currentMonth]].length; i++) {
-        var str = birth[monthName[currentMonth]][i].date;
+    for(var i = 0; i < birthdates[monthName[currentMonth]].length; i++) {
+        var str = birthdates[monthName[currentMonth]][i].date;
         if (str.substring(0,str.indexOf('-')) == birthDate.getDate()) {
-            personNames += birth[monthName[currentMonth]][i].name + "\n";
+            personNames += birthdates[monthName[currentMonth]][i].name + "\n";
         }
     }
     alert(personNames);

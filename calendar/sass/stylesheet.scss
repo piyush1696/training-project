@@ -3,13 +3,6 @@ body {
     margin: 0;
     padding: 0;
 }
-@mixin arrow-hidden($value) {
-    -webkit-appearance: $value;
-    -moz-appearance: $value;
-    -ms-appearance: $value;
-    -o-appearance: $value;
-    appearance: $value;
-}
 .container {
     margin: 0 auto;
     width: 80%;
@@ -21,19 +14,6 @@ body {
     .row {
         color:#FFFFFF;
         overflow: auto;
-
-        .list {
-            border: none;
-            background-color: inherit;
-            color: #FFFFFF;
-            padding: 20px;
-            font-size: 18px;
-            @include arrow-hidden(none);
-
-            .list-item {
-                background-color: grey;
-            }
-        }
     }
 
     .row-1 {
@@ -80,7 +60,7 @@ body {
             float: left;
             padding: 20px 0px;
             text-align: center;
-            width: 12.5%;
+            width: 128px;
         }
     }
 
@@ -94,7 +74,7 @@ body {
                 display: inline-block;
                 margin:  1px 0 ;
                 position: relative;
-                width: 12.5%;
+                width: 128px;
 
                 .color {
                     background-color: #1A237E;
@@ -123,8 +103,7 @@ body {
                     left: 20px;
                     position: absolute;
                     width: 15px;
-
-                                }
+                }
 
                 &:nth-child(odd){
                     background-color: #E1F5FE;
