@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Youtube Search</title>
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="icon" href="images/youtube-icon.png">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header class="navigation navbar navbar-default">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-sm-3 col-xs-6">
+                        <div class="navbar-header">
+                            <div class="navbar-brand logo">
+                                <img src="images/logo-youtube.png" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-9 col-xs-12">
+                        <form class="navigation-form navbar-form navbar-left">
+                            <input type="text" class="input-area" placeholder="Search" id="search-text">
+                            <button type="submit" class="button btn btn-default" id="search-btn"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="container">
+            <div id="content">
+                <!-- <div class="row">
+                    <div class="col-sm-3">
+                        <div class="video thumbnail">
+                            <img src="images/default.png" class="image img-responsive">
+                            <div class="content-wrapper">
+                                <span class="title">
+                                        Hello Title Video Song | Hello Video Songs | Akhil Akkineni, Kalyani Priyadarshan
+                                </span>
+                                <p class="description">
+                                    Watch & Enjoy #HELLO Movie Video Song Starring #AkhilAkkineni, #KalyaniPriyadarshan. Directed by #VikramKKumar, Music Composed By #AnupRubens, ...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <footer class="page">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+
+        </footer>
+        <div id="offline-state" class="alert alert-danger">
+            <span>Please Connect to Internet...</span>
+        </div>
+        <script src="js/fetch-data.js"></script>
+    </body>
+</html>
