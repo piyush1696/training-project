@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F9F9F9; }
+
+.navigation .logo {
+  padding: 10px; }
+.navigation .navigation-form {
+  width: 100%; }
+.navigation .input-area {
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  padding: 5px;
+  width: 90%; }
+  .navigation .input-area:focus {
+    outline: none; }
+  .navigation .input-area:-webkit-autofill {
+    background-color: #FFFFFF; }
+.navigation .button {
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  font-size: 16px;
+  margin-left: -5px;
+  margin-top: -3px;
+  padding: 7px;
+  width: 10%; }
+
+.page {
+  text-align: center;
+  font-size: 16px; }
+
+.container .video {
+  border: none;
+  padding: 0; }
+  .container .video .image {
+    width: 100%; }
+  .container .video .content-wrapper {
+    padding: 10px 5px; }
+    .container .video .content-wrapper .title {
+      font-size: 16px;
+      font-weight: bold; }
+    .container .video .content-wrapper .description {
+      line-height: 20px;
+      padding-top: 5px; }
+
+#offline-state {
+  display: none; }
+
+/*# sourceMappingURL=style.css.map */
