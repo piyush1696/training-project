@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Villa</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="lib/jquery/3.3.1/jquery.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="lib/mustache.js/2.3.0/mustache.js"></script>
+
+        <link rel="stylesheet" href="asset/css/book.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header class="header navbar navbar-default">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 navbar-header">
+                        <div class="navbar-brand">
+                            <a class="heading " href="#">Book Villa</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-8 search-box">
+                        <input type="text" placeholder="Search"  id="search-field">
+                        <button class="button btn btn-default" id="search-button"> <i class="fa fa-search"></i></button>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#subjects">
+                           <span class="icon-bar"></span>
+                           <span class="icon-bar"></span>
+                           <span class="icon-bar"></span>
+                         </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div id="subjects" class="col-xs-12 col-sm-2">
+                        <ul class='book-category nav nav-pills nav-stacked'>
+                            {{#subjects}}<li class='category' role='presentation'><a>{{.}}</a></li>{{/subjects}}
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-10 collection-wrapper">
+                        <div id="book-collection"></div>
+                        <script type="text/template" id="book-data">
+                            <div class="book-column col-xs-12 col-sm-4 col-md-3">
+                                <div class="thumbnail book-wrapper">
+                                    <div class="content-wrapper">
+                                        <div class="book-image-wrapper">
+                                            <img src="asset/images/default-book.png" class="img-responsive book-image" alt="{{Title}}" />
+                                            <div class="book-isbn">Book ISBN
+                                                <div class="isbn-number">{{isbn}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="book-name">{{shortTitle}}</div>
+                                        <p class="book-description">{{shortDescription}}</p>
+                                    </div>
+                                    <div class="action-wrapper">
+                                        <div class="rating-bar">
+                                            <ul class="list-inline">
+                                                <li class="icon" onclick="setRatingBar(event)"><i class="star-unchecked fa fa-star-o"></i></li>
+                                                <li class="icon" onclick="setRatingBar(event)"><i class="star-unchecked fa fa-star-o"></i></li>
+                                                <li class="icon" onclick="setRatingBar(event)"><i class="star-unchecked fa fa-star-o"></i></li>
+                                                <li class="icon" onclick="setRatingBar(event)"><i class="star-unchecked fa fa-star-o"></i></li>
+                                                <li class="icon" onclick="setRatingBar(event)"><i class="star-unchecked fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="icon favourite" onclick="setFavourite(event)"><i class="heart-unchecked fa fa-heart-o"></i></div>
+                                    </div>
+                                    <button class="button-detail btn btn-primary" data-toggle="modal" data-target="#book-modal" onclick="showBookDetail({{ID}})">Detail</button>
+                                </div>
+                            </div>
+                        </script>
+                        <div class="loader"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="book-modal" class="modal fade" role="dialog" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button class="button-close btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/book.js"></script>
+        <script type="type/template" id="modal-body">
+            <div class="modal-body">
+            <button type="button" class="close-button close" data-dismiss="modal">&times;</button>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <img class="modal-image-wrapper img-responsive" src="{{{Image}}}">
+                    </div>
+                    <div class="col-xs-12 col-sm-8">
+                        <h4 class="book-title">Title: <strong>{{Title}}</strong></h4>
+                        <h5 class="book-subtitle">Sub title: <strong>{{SubTitle}}</strong></h5>
+                        <h5 class="bok-isbn">ISBN: <strong>{{isbn}}</strong></h5>
+                        <p class="book-description">{{Description}}</p>
+                     </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button-close btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </script>
+    </body>
+</html>
