@@ -1,5 +1,5 @@
 //Object Constructor
-function countryTemplae (backgroundColor, color, flag, name, description) {
+function countryTemplate (backgroundColor, color, flag, name, description) {
     this.backgroundColor = backgroundColor;
     this.color = color;
     this.flag = flag;
@@ -8,6 +8,7 @@ function countryTemplae (backgroundColor, color, flag, name, description) {
 };
 //variable Declaration
 var countryName = [];
+var visible = [];
 var count = 0;
 
 //Description of countries
@@ -40,37 +41,47 @@ var usaDesc = "The U.S. is a country of 50 states covering a vast swath of North
         "DC. Midwestern metropolis Chicago is known for influential architecture and on the west coast, Los Angeles' Hollywood is famed for filmmaking.";
 
 //Inserting in array
-countryName[0] = new countryTemplae("#90CAF9", "#000000", "argentina", "argentina", argentinaDesc);
-countryName[1] = new countryTemplae("#EF5350", "#000000", "canada", "canada", canadaDesc);
-countryName[2] = new countryTemplae("#EE3935", "#FFFFFF", "china", "china", chinaDesc);
-countryName[3] = new countryTemplae("#0288D1", "#FFFFFF", "india", "india", indiaDesc);
-countryName[4] = new countryTemplae("#1B5E20", "#FFFFFF", "pakistan", "pakistan", pakistanDesc);
-countryName[5] = new countryTemplae("#FDD835", "#000000", "spain", "spain", spainDesc);
-countryName[6] = new countryTemplae("#C62828", "#FFFFFF", "usa", "usa", usaDesc);
+countryName[0] = new countryTemplate("#90CAF9", "#000000", "argentina", "argentina", argentinaDesc);
+countryName[1] = new countryTemplate("#EF5350", "#000000", "canada", "canada", canadaDesc);
+countryName[2] = new countryTemplate("#EE3935", "#FFFFFF", "china", "china", chinaDesc);
+countryName[3] = new countryTemplate("#0288D1", "#FFFFFF", "india", "india", indiaDesc);
+countryName[4] = new countryTemplate("#1B5E20", "#FFFFFF", "pakistan", "pakistan", pakistanDesc);
+countryName[5] = new countryTemplate("#FDD835", "#000000", "spain", "spain", spainDesc);
+countryName[6] = new countryTemplate("#C62828", "#FFFFFF", "usa", "usa", usaDesc);
 
 //Call by default to insert first element
-addCountry();
+addCountry(0);
 //Function to insert more countries
-function addCountry() {
-    if(count > countryName.length-1 ) {
-        alert("Sorry No more can Add");
+function addCountry(id) {
+    if(count > countryName.length-1) {
+        alert("Sorry");
     }
     else {
-        var block = "<div class='country'>"+
-                        "<img src='images/"+countryName[count].flag+".png' alt="+countryName[count].flag+" class='country-flag' >"+
-                        "<h1 class='country-name'>"+countryName[count].name+"</h1>"+
-                        "<p class='country-desc'>"+
-                            countryName[count].description+
-                        "</p>"+
-                        "<button class='add-more' onclick='addCountry()' id='btn-"+count+"'>Show Country</button>"+
+        var block = "<div class='country' id='count-" + count + "'>" +
+                        "<div class='cross' onclick='closeThis(" + count + ")'>x</div>" +
+                        "<img src='images/" + countryName[count].flag + ".png' alt=" + countryName[count].flag + " class='country-flag' >" +
+                        "<h1 class='country-name'>" + countryName[count].name + "</h1>" +
+                        "<p class='country-desc'>" +
+                            countryName[count].description +
+                        "</p>" +
+                        "<button class='add-more' onclick='addCountry(" + count + ")' id='btn-" + count + "'>Show Country</button>" +
                     "</div>";
-        document.body.innerHTML += block;
+
+        document.getElementById("container").innerHTML += block;
+
         document.getElementsByClassName("country")[count].style.backgroundColor = countryName[count].backgroundColor;
         document.getElementsByClassName("country")[count].style.color = countryName[count].color;
-
-        if(count > 0) {
-            document.getElementById("btn-"+(count-1)).disabled = true;
+        if(count != 0) {
+             document.getElementById("btn-" + (id)).disabled = true;
         }
+        visible.push(count);
         count++;
     }
+}
+
+function closeThis(id) {
+    document.getElementById("count-" + id).style.display = "none";
+    visible.splice(visible.indexOf(id),1);
+    var last= visible[visible.length-1];
+    document.getElementById("btn-" + last).disabled = false;
 }
